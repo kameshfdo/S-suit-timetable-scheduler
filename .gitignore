@@ -3,9 +3,10 @@ Backend/.venv
 
 @"
 # Python virtual environment
-Backend/env/
-Backend/venv/
-Backend/ENV/
+env/
+venv/
+ENV/
+
 
 
 # Python cache files
