@@ -53,7 +53,7 @@ const ViewSliitTimetable = () => {
   const [generationLoading, setGenerationLoading] = useState(false);
   const [form] = Form.useForm();
 
-  // Fetch all SLIIT timetables
+  // Fetch all UOK timetables
   useEffect(() => {
     const fetchTimetables = async () => {
       setLoading(true);
@@ -68,7 +68,7 @@ const ViewSliitTimetable = () => {
           fetchTimetableStats(result[0]._id);
         }
       } catch (error) {
-        console.error("Error fetching SLIIT timetables:", error);
+        console.error("Error fetching UOK timetables:", error);
         message.error("Failed to fetch timetables");
       } finally {
         setLoading(false);
@@ -212,7 +212,7 @@ const ViewSliitTimetable = () => {
       const parameters = {
         name: values.name,
         algorithm: values.algorithm,
-        dataset: "sliit",
+        dataset: "uok",
         parameters: {
           population: values.population,
           generations: values.generations,
@@ -323,7 +323,7 @@ const ViewSliitTimetable = () => {
   return (
     <div className="bg-white p-6 rounded-xl shadow-md max-w-6xl mx-auto">
       <div className="flex justify-between items-center mb-4">
-        <Title level={2}>SLIIT Timetables</Title>
+        <Title level={2}>UOK Timetables</Title>
         <Button
           type="primary"
           icon={<PlusOutlined />}
@@ -692,7 +692,7 @@ const ViewSliitTimetable = () => {
 
       {/* Generate Timetable Modal */}
       <Modal
-        title="Generate New SLIIT Timetable"
+        title="Generate New UOK Timetable"
         open={isGenerateModalVisible}
         onCancel={handleGenerateCancel}
         footer={null}
@@ -718,7 +718,7 @@ const ViewSliitTimetable = () => {
               },
             ]}
           >
-            <Input placeholder="e.g., SLIIT Summer 2025 Timetable" />
+            <Input placeholder="e.g., UOK Summer 2025 Timetable" />
           </Form.Item>
 
           <Form.Item

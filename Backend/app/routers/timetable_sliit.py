@@ -20,7 +20,7 @@ from pydantic import BaseModel, Field
 class TimetableCreateRequest(BaseModel):
     name: str = Field(..., description="Name of the timetable")
     algorithm: str = Field(..., description="Algorithm to use: spea2, nsga2, moead, dqn, sarsa, or implicit_q")
-    dataset: str = Field("sliit", description="Dataset to use")
+    dataset: str = Field("uok", description="Dataset to use")
     parameters: TimetableParameters = Field(default_factory=TimetableParameters, description="Algorithm parameters")
     user_id: Optional[str] = Field(None, description="ID of the user creating the timetable")
     useAlgorithm2: Optional[bool] = Field(False, description="Flag to use algorithms from algorithms_2 directory")
